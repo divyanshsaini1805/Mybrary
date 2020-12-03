@@ -7,7 +7,7 @@ const express = require("express")
 const app = express()
 const expressLayouts = require("express-ejs-layouts")
 const indexRouter = require('./routes/index.js')
-
+const expressfavicon = require('express-favicon')
 
 app.set('view engine','ejs')
 
@@ -18,24 +18,24 @@ app.use(expressLayouts)
 app.use('static',express.static('public'))
 
 
-const MongoClient = require('mongodb').MongoClient;
+//const MongoClient = require('mongodb').MongoClient;
 const uri = "mongodb+srv://DIVYANSH:yl7GpHDqKD6WtB0c@cluster0.mvrxk.mongodb.net/mybrary?retryWrites=true&w=majority";
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-client.connect(err => {
-  const collection = client.db("test").collection("devices");
-  // perform actions on the collection object
-  client.close();
-});
+// const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+// client.connect(err => {
+//   const collection = client.db("test").collection("devices");
+//   // perform actions on the collection object
+//   client.close();
+// });
 
 //DATABASE_URL = mongodb://localhost/mybrary
 
 const mongoose = require('mongoose')
-// mongoose.connect(process.env.DATABASE_URL ,  { useNewUrlParser: true , useUnifiedTopology: true})
+mongoose.connect(uri ,  { useNewUrlParser: true , useUnifiedTopology: true})
 
 
-// const db = mongoose.connection
-// db.on('error', error => console.error(error))
-// db.once('open', () => console.log("connected to mongoose"))
+const db = mongoose.connection
+db.on('error', error => console.error(error))
+db.once('open', () => console.log("connected to mongoose"))
 
 
 
