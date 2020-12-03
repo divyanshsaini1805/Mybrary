@@ -27,6 +27,7 @@ client.connect(err => {
   client.close();
 });
 
+//DATABASE_URL = mongodb://localhost/mybrary
 
 const mongoose = require('mongoose')
 // mongoose.connect(process.env.DATABASE_URL ,  { useNewUrlParser: true , useUnifiedTopology: true})
