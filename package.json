@@ -4,7 +4,8 @@
   "description": "Books Website",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "node server.js",
+    "DevStart" : "nodemon server.js"
   },
   "author": "Divyansh WDS",
   "license": "ISC",
