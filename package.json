@@ -5,19 +5,19 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "DevStart" : "nodemon server.js"
+    "DevStart": "nodemon server.js"
   },
   "author": "Divyansh WDS",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
     "ejs": "^3.1.5",
     "express": "^4.17.1",
     "express-ejs-layouts": "^2.5.0",
     "express-favicon": "^2.0.1",
-    "pug": "^3.0.0",
-    "dotenv": "^8.2.0",
-    "mongoose": "^5.11.2"
-  
+    "mongoose": "^5.11.2",
+    "pug": "^3.0.0"
   },
   "devDependencies": {
     "dotenv": "^8.2.0",

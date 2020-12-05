@@ -9,6 +9,12 @@ const expressLayouts = require("express-ejs-layouts")
 const indexRouter = require('./routes/index.js')
 const expressfavicon = require('express-favicon')
 
+const authorRouter = require('./views/authors/author')
+
+app.use(express.urlencoded({ extended: false, limit : '10mb' }));
+app.use(express.json());
+
+
 app.set('view engine','ejs')
 
 
@@ -33,5 +39,6 @@ db.once('open', () => console.log("connected to mongoose"))
 //ZiJX8yWfILBxp3bq
 
 app.use('/',indexRouter)
+app.use('/authors',authorRouter)
 app.listen(process.env.PORT || 80)
 
