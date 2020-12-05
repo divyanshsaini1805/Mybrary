@@ -1,8 +1,7 @@
 const express = require('express')
 const router = express.Router()
-const Author = require('E:/Divyansh/Web Development/Books/models/authors.js')
 
-//router.set('view-engine','ejs')
+const Author = require('../../models/authors')
 
 router.get('/', async(req,res)=>{
 
